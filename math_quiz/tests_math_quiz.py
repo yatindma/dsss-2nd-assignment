@@ -31,6 +31,8 @@ class TestMathGame(unittest.TestCase):
             self.assertEqual(problem, expected_problem)
             self.assertEqual(answer, expected_answer)
 
+            rand_num = function_A(min_val, max_val)
+            self.assertTrue(min_val <= rand_num <= max_val)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,7 @@
 import random
 
 
+
 def generate_random_integer(min_range, max_range):
     """
     Generate a random integer within a specified range.
@@ -57,26 +58,21 @@ def run_math_quiz():
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(total_questions):
-        num1 = generate_random_integer(1, 10)
-        num2 = generate_random_integer(1, 10)
-        operator = choose_random_operator()
+    for _ in range(t_q):
+        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
 
-        problem, correct_answer = evaluate_expression(num1, num2, operator)
-        print(f"\nQuestion: {problem}")
+        PROBLEM, ANSWER = function_C(n1, n2, o)
+        print(f"\nQuestion: {PROBLEM}")
+        useranswer = input("Your answer: ")
+        useranswer = int(useranswer)
 
-        try:
-            user_answer = int(input("Your answer: "))
-            if user_answer == correct_answer:
-                print("Correct! You earned a point.")
-                score += 1
-            else:
-                print(f"Wrong answer. The correct answer is {correct_answer}.")
-        except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+        if useranswer == ANSWER:
+            print("Correct! You earned a point.")
+            s += -(-1)
+        else:
+            print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {score}/{total_questions}")
-
+    print(f"\nGame over! Your score is: {s}/{t_q}")
 
 if __name__ == "__main__":
-    run_math_quiz()
+    math_quiz()
